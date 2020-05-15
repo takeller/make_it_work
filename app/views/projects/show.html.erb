@@ -1,0 +1,12 @@
+<h1> <%=@project.name%> </h1>
+
+<p>Material: <%= @project.material %> </p>
+<p>Challenge Theme: <%= @project.challenge.theme %> </p>
+<p>Number of Contestants: <%= @project.total_contestants %></p>
+<p>Average Contestant Experience: <%= @project.average_experience %></p>
+
+<%= form_tag("/projects/#{@project.id}", method: :patch) do %>
+  <%= label_tag "Contestant Id:" %>
+  <%= text_field_tag :contestant_id %>
+  <%= submit_tag "Add Contestant To Project" %>
+<% end %>
